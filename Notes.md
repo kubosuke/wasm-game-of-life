@@ -80,3 +80,15 @@ pub enum Cell {
     Alive = 1,
 }
 ```
+
+## difference between `use` and `extern`
+
+https://stackoverflow.com/questions/29403920/whats-the-difference-between-use-and-extern
+
+```
+extern crate foo indicates that you want to link against an external library and brings the top-level crate name into scope (equivalent to use foo). As of Rust 2018, in most cases you won't need to use extern crate anymore because Cargo informs the compiler about what crates are present. (There are one or two exceptions)
+
+use bar is a shorthand for referencing fully-qualified symbols.
+
+Theoretically, the language doesn't need use — you could always just fully-qualify the names, but typing std::collections::HashMap.new(...) would get very tedious! Instead, you can just type use std::collections::HashMap once and then HashMap will refer to that.
+```
